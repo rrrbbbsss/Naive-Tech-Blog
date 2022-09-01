@@ -1,0 +1,16 @@
+<div class="col-8">
+  {{> post-info post}}
+<!-- comments -->
+<div class="text-center">
+  <h3 class="p-2">Comments</h2>
+  {{#if loggedIn}}
+  {{> comment-add}}
+  {{/if}}
+  {{#each post.comments as |comment|}}
+  {{> comment-info comment}}
+  {{/each}}
+</div>
+</div>
+{{#if loggedIn}}
+<script src="/javascript/comment.js"></script>
+{{/if}}

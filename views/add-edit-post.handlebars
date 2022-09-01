@@ -1,0 +1,40 @@
+<form class="card col-6 text-center border mt-4 m-2" id="post-form">
+  <div class="card-header">
+    <h2>
+      {{#if newpost}}
+        Add New Post
+      {{/if}}
+      {{#if editpost}}
+        Edit Post
+      {{/if}}
+    </h2>
+  </div>
+  <div class="p-2">
+    <label for="post-title" class="form-label">Title:</label>
+    <textarea type="text" class="form-control" id="post-title">
+      {{#if editpost}}
+        {{post.title}}
+      {{/if}}
+    </textarea>
+  </div>
+  <div class="p-2">
+    <label for="post-content" class="form-label">Content:</label>
+    <textarea type="text" class="form-control" id="post-content">
+      {{#if editpost}}
+        {{post.content}}
+      {{/if}}
+    </textarea>
+  </div>
+  <div class="p-2">
+    <button type="submit" class="btn btn-primary my-2">
+      Save
+    </button>
+  </div>
+</form>
+
+{{#if newpost}}
+  <script src="/javascript/newpost.js"></script>
+{{/if}}
+{{#if editpost}}
+  <script src="/javascript/editpost.js"></script>
+{{/if}}

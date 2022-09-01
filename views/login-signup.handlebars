@@ -1,0 +1,35 @@
+<div class="container p-4">
+  <div class="row justify-content-center">
+    <form class="col-4 card p-4 border" id="account-form">
+      <div class="">
+        <label for="username-input" class="form-label">username:</label>
+        <input type="text" class="form-control" id="username-input" />
+      </div>
+      <div class="">
+        <label for="password-input" class="form-label">password:</label>
+        <input type="password" class="form-control" id="password-input" />
+      </div>
+      <div class="">
+        <button type="submit" class="btn btn-primary my-2">
+          {{#if login}}
+            Log In
+          {{else}}
+            Sign Up
+          {{/if}}
+        </button>
+      </div>
+      <div class="">
+        {{#if login}}
+          <a href="/signup">Sign up instead</a>
+        {{else}}
+          <a href="/login">Log in instead</a>
+        {{/if}}
+      </div>
+    </form>
+  </div>
+</div>
+{{#if login}}
+  <script src="/javascript/login.js"></script>
+{{else}}
+  <script src="/javascript/signup.js"></script>
+{{/if}}

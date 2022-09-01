@@ -1,0 +1,28 @@
+<!-- post -->
+<div class="row align-items-center">
+  <a href="/post/{{id}}" class="col text-decoration-none">
+    <article class="card text-center mx-4 my-3">
+      <div class="card-header">
+        <h2 class="card-title link-primary">{{title}}</h2>
+        <div class="card-subtitle text-dark">
+          by
+          {{user.username}}
+          on
+          {{format_date createdAt}}
+        </div>
+      </div>
+      <div class="card-body text-dark">
+        {{content}}
+      </div>
+    </article>
+  </a>
+
+  {{#if owned}}
+    <div class="col-1 align-item-center justify-content-center">
+      <a href="/dashboard/editpost/{{id}}" class="btn btn-warning">Edit</a>
+    </div>
+    <div class="col-1">
+      <button class="btn btn-danger deletePost" data-id={{id}}>Delete</button>
+    </div>
+  {{/if}}
+</div>
