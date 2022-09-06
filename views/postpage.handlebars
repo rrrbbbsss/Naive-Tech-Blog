@@ -1,15 +1,20 @@
-<div class="col-8">
+<div class="container">
+<div class="row align-items-center justify-content-center">
   {{> post-info post}}
+</div>
+</div>
 <!-- comments -->
-<div class="text-center">
-  <h3 class="p-2">Comments</h2>
+<div class="container text-center ">
+  <h3 class="p-2">Comments</h3>
   {{#if loggedIn}}
+    <div class="row align-items-center justify-content-center">
   {{> comment-add}}
   {{/if}}
   {{#each post.comments as |comment|}}
+    <div class="row align-items-center justify-content-center">
   {{> comment-info comment}}
-  {{/each}}
 </div>
+  {{/each}}
 </div>
 {{#if loggedIn}}
 <script src="/javascript/comment.js"></script>

@@ -2,9 +2,9 @@
     <h2><a href="/dashboard/addpost" class="text-white text-decoration-none">Add A New Post</a>
 </h2>
 </div>
-<ol class="list-unstyled col-8"  id="posts">
+<ol class="list-unstyled container"  id="posts">
   {{#each posts as |post|}}
-    <li>
+    <li class="row justify-content-center align-items-center">
       {{> post-info post owned='true'}}
     </li>
   {{/each}}
